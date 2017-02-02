@@ -66,15 +66,14 @@
 			padding: .25rem;
 			color: white;
 			margin: .25rem;
-			font-size: .9rem;
+			font-size: 1rem;
 			flex: 1;
 			border-radius: 4px;
 			font-family: 'Lato';
 			background-color: transparent;
-			transition: 500ms ease-in all;
 		}
 		svg {
-			height: 15px;
+			height: 20px;
 			width: auto;
 		}
 		.bg-1 {
@@ -97,6 +96,29 @@
 			background: -webkit-linear-gradient(to left, #136a8a , #267871); /* Chrome 10-25, Safari 5.1-6 */
 			background: linear-gradient(to left, #136a8a , #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		}
+
+@media (min-width: 500px) {
+	.button-wrapper button {
+		flex: 1 !important;
+		font-size: 1.25rem;
+
+	}
+	.verse {
+		font-size: 1.5rem;
+		max-width: 750px;
+		margin: 0 auto;
+	}
+	.button-wrapper span {
+		flex: 100% !important;
+		font-size: 1rem;
+		margin: .25rem 0;
+
+	}
+	svg {
+		height: 25px;
+		margin: .25rem 0;
+	}
+}
 		</style>
 
 		<script src="app.js"></script>
