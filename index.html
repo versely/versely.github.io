@@ -24,7 +24,7 @@
 </svg>
 		</section>
 		
-		<section ng-show="!loading" class="verse pa4 tc overflow-y-auto flex items-center justify-center">
+		<section ng-show="!loading" class="verse pa4 tc flex items-center justify-center">
 			<p class="lh-copy"></p>
 		</section>
 
@@ -60,6 +60,8 @@
 			width: 100%;
 			font-size: 1.5rem;
 			flex: 1;
+  			overflow-y: scroll;
+            		-webkit-overflow-scrolling: touch;
 		}
 		mark {
 			line-height: 3rem;
