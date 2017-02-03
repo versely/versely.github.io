@@ -15,6 +15,7 @@ app.controller('AppController', ['$scope', '$http', function($scope, $http) {
     document.querySelector('body').classList.toggle('bg-' + randomBg);
   	$http.get('./bible.json').success(function(data) {
   		$scope.bible = data;
+      console.log($scope.bible);
   		$scope.getVerse();
       $scope.loading = false;
   	});
@@ -26,7 +27,10 @@ app.controller('AppController', ['$scope', '$http', function($scope, $http) {
   	var chapterIndex = Math.floor(Math.random()*book.chapters.length);
   	var chapterNum = chapterIndex + 1;
   	var chapter = book.chapters[chapterIndex];
-  	var verseNum = Math.floor(Math.random()*Object.values(chapter[chapterNum]).length);
+    var vals = Object.keys(chapter[chapterNum]).map(function(key) {
+      return key;
+    });
+  	var verseNum = Math.floor(Math.random() * vals.length);
   	verseNum++;
     var verse = chapter[chapterNum][verseNum].replace(/}/g, '</i>').replace(/{/g, '<i>');
 
