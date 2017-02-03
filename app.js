@@ -6,14 +6,17 @@ app.controller('AppController', ['$scope', '$http', function($scope, $http) {
   $scope.verses = [];
   $scope.correctVerse = 0;
   $scope.score = 0;
+  $scope.loading = false;
 
   $scope.loadVerses = function() {
     var randomBg = Math.floor(Math.random()*4);
     randomBg++;
+    $scope.loading = true;
     document.querySelector('body').classList.toggle('bg-' + randomBg);
   	$http.get('./bible.json').success(function(data) {
   		$scope.bible = data;
   		$scope.getVerse();
+      $scope.loading = false;
   	});
   };
 
