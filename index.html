@@ -18,11 +18,11 @@
 </svg>
 		</section>
 		
-		<section class="verse pa3 overflow-y-auto flex items-center justify-center">
+		<section ng-show="!loading" class="verse pa3 overflow-y-auto flex items-center justify-center">
 		<p class="lh-copy"></p>
 		</section>
 
-		<section class="button-wrapper flex flex-wrap pa2">
+		<section ng-show="!loading" class="button-wrapper flex flex-wrap pa2">
 			<button style="flex: 100%" class="left-button" ng-click="chooseVerse(0)">
 			Verse 1
 			</button>
